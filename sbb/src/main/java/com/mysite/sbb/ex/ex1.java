@@ -1,17 +1,15 @@
-package com.mysite.sbb;
+package com.mysite.sbb.ex;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
-	//컨트롤러 만들기
-	
-	@GetMapping("/hello")
+public class ex1 {
+
+	@GetMapping("/jump")
 	@ResponseBody
-	public String hello() {
-		return "Hello Spring Boot Board";
+	public String jump() {
+		return "점프 투 스프링 부트";
 	}
-	
 }
