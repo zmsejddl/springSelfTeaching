@@ -2,6 +2,7 @@
 <!--<h2>Hello Template</h2>-->
 
 <!--데이터를 화면에 출력하기-->
+<!--질문 목록에 링크 추가하기-->
 <table>
 	<thead>
 		<tr>
@@ -11,7 +12,12 @@
 	</thead>
 	<tbody>
 		<tr th:each="question : ${questionList}">
-			<td th:text="${question.subject}"></td>
+			<!--<td th:text="${question.subject}"></td>
+			<td th:text="${question.createDateTime}"></td>-->
+			<td>
+				<a th:href="@{|/question/detail/${question.id}|}"
+				th:text="${question.subject}"></a>
+			</td>
 			<td th:text="${question.createDateTime}"></td>
 		</tr>
 	</tbody>
