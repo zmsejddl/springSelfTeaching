@@ -1,0 +1,8 @@
+/*스태틱 디렉터리와 스타일시트 이해하기*/
+textarea {
+	width:100%;
+}
+
+input[type=submit] {
+	margin-top:10px;
+}
