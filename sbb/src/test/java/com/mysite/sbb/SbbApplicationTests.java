@@ -23,10 +23,11 @@ class SbbApplicationTests {
 	
 	@Test
 	void testJap() {
+		assertEquals(2, this.questionRepository.count());
 		Optional<Question> oq = this.questionRepository.findById(4);
 		assertTrue(oq.isPresent());
 		Question q = oq.get();
-		q.setContent("수정된 제목");
-		this.questionRepository.save(q);
+		this.questionRepository.delete(q);
+		assertEquals(1, this.questionRepository.count());
 	}
 }
