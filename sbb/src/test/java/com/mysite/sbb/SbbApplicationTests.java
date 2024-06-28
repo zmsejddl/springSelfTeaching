@@ -26,11 +26,16 @@ class SbbApplicationTests {
 	@Autowired
 	private AnswerRepository answerRepository;
 	
+	@Transactional
 	@Test
 	void testJap() {
-		Optional<Answer> oa = this.answerRepository.findById(1);
-		assertTrue(oa.isPresent());
-		Answer a = oa.get();
-		assertEquals(1, a.getQuestion().getId());
+		Optional<Question> oq = this.questionRepository.findById(1);
+		assertTrue(oq.isPresent());
+		Question q = oq.get();
+		
+		List<Answer> answerList = q.getAnswerList();
+		
+		assertEquals(1, answerList.size());
+		assertEquals("네 자동으로 생성됩니다", answerList.get(0).getContent());
 	}
 }
