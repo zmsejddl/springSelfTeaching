@@ -13,5 +13,6 @@ public class HelloController {
 	public String hello() {
 		return "Hello Spring Boot Board";
 	}
-	
+	//엔티티 -> 리포지토리 -> 컨트롤러 -> 서비스
+
 }
